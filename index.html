@@ -11,12 +11,47 @@
   h1{font-size:34px;color:#ff9d2f;text-shadow:0 0 12px rgba(255,157,47,.4);margin:12px 0;}
   h2{font-size:24px;color:#ff9d2f;margin:10px 0;}
   .sub{color:#9db2d0;margin:8px 0 20px;}
-  .tip{color:#7d8fb5;font-size:13px;margin:18px auto 0;max-width:620px;line-height:1.8;}
   .big-btn{display:inline-block;padding:14px 44px;font-size:20px;font-weight:bold;color:#fff;
     background:linear-gradient(180deg,#ff9d2f,#f97316);border:none;border-radius:10px;cursor:pointer;margin-top:18px;
     box-shadow:0 4px 14px rgba(249,115,22,.4);}
   .big-btn:disabled{background:#3a3f55;color:#7d8495;cursor:not-allowed;box-shadow:none;}
   .small-btn{padding:8px 20px;font-size:14px;color:#cfe0ff;background:#26324a;border:1px solid #3a4a6b;border-radius:8px;cursor:pointer;margin-top:14px;}
+  .small-btn:hover{background:#2e3c5c;}
+
+  /* ===== 登录界面 ===== */
+  #login-box{max-width:380px;margin:20px auto;background:#1b2438;border:1px solid #2c3a57;border-radius:12px;padding:26px 24px;}
+  #login-box label{display:block;color:#9db2d0;font-size:13px;margin:12px 0 4px;text-align:left;}
+  #login-box input{width:100%;padding:10px 12px;font-size:16px;background:#0d1220;border:1px solid #3a4a6b;border-radius:8px;color:#e8e8f0;outline:none;}
+  #login-box input:focus{border-color:#ff9d2f;}
+  #login-msg{color:#f87171;font-size:13px;min-height:18px;margin-top:10px;}
+  .login-actions{display:flex;gap:12px;justify-content:center;margin-top:14px;}
+  .login-actions .big-btn{margin-top:0;padding:10px 30px;font-size:16px;}
+  .login-tip{color:#7d8fb5;font-size:12px;margin-top:14px;line-height:1.7;}
+
+  /* ===== 难度选择 ===== */
+  .diff-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0;}
+  .diff-btn{padding:10px 22px;font-size:15px;font-weight:bold;color:#cfe0ff;background:#26324a;border:2px solid #3a4a6b;border-radius:10px;cursor:pointer;}
+  .diff-btn:hover{border-color:#ff9d2f;}
+  .diff-btn.sel{border-color:#ff9d2f;background:#33200f;color:#ffd9a0;box-shadow:0 0 10px rgba(255,157,47,.3);}
+  .diff-btn small{display:block;font-weight:normal;color:#8fa2c4;font-size:11px;margin-top:2px;}
+
+  /* ===== 战绩面板 ===== */
+  #stats-panel{max-width:640px;margin:0 auto;background:#1b2438;border:1px solid #2c3a57;border-radius:12px;padding:16px 20px;text-align:left;}
+  #stats-panel .rank-line{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+  #stats-panel .rank-name{font-size:22px;font-weight:bold;color:#ffd9a0;}
+  #stats-panel .rank-score{color:#9db2d0;font-size:14px;}
+  #stats-panel .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;text-align:center;}
+  #stats-panel .stat-item{background:#10172a;border-radius:8px;padding:8px 4px;}
+  #stats-panel .stat-item b{display:block;font-size:18px;color:#ffcf8a;}
+  #stats-panel .stat-item span{font-size:11px;color:#7d8fb5;}
+  #rank-bar{height:10px;background:#2a3350;border-radius:6px;margin-top:12px;overflow:hidden;}
+  #rank-fill{height:100%;background:linear-gradient(90deg,#ff9d2f,#f97316);border-radius:6px;transition:width .4s;}
+  #rank-next{font-size:12px;color:#8fa2c4;margin-top:6px;}
+
+  /* ===== 规则 ===== */
+  .rules{max-width:800px;margin:18px auto;background:#141c30;border:1px solid #2a3a5c;border-radius:12px;padding:16px 26px;text-align:left;font-size:13px;color:#b9c6e0;line-height:2;}
+  .rules b{color:#ffcf8a;}
+  .rules .rule-sec{color:#ff9d2f;font-weight:bold;margin-top:12px;}
 
   .select-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin:18px auto;max-width:1000px;}
   .sel-card{position:relative;background:#1b2438;border:1px solid #2c3a57;border-radius:10px;padding:12px 8px;color:#dfe6f5;cursor:pointer;transition:.15s;}
@@ -27,47 +62,109 @@
   .sel-skills{font-size:11px;color:#8fa2c4;margin-top:6px;line-height:1.5;}
   .sel-order{position:absolute;top:-8px;right:-8px;background:#f97316;color:#fff;border-radius:50%;width:26px;height:26px;font-size:12px;display:flex;align-items:center;justify-content:center;}
 
-  #battle-header{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;padding:6px 10px;background:#141c30;border:1px solid #2a3a5c;border-radius:8px;margin-bottom:6px;font-size:14px;color:#ffcf8a;flex:0 0 auto;}
+  #battle-header{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;padding:6px 10px;background:#141c30;border:1px solid #2a3a5c;border-radius:8px;margin-bottom:6px;font-size:14px;color:#ffcf8a;flex:0 0 auto;}
   #battle-header .hdr-item{display:flex;align-items:center;gap:6px;}
+  #sound-toggle{background:#26324a;border:1px solid #3a4a6b;color:#cfe0ff;border-radius:6px;padding:2px 8px;font-size:12px;cursor:pointer;}
 
-  /* 对战界面整屏适配：一屏显示完整，无需滚动 */
-  #screen-battle{height:100vh;height:100dvh;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;padding:8px 12px;}
-  .team-row{flex:0 0 auto;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
-  #ai-row{margin-bottom:6px;}
-  #user-row{margin-top:6px;}
-  .ninja-card{width:170px;background:#1b2438;border:2px solid #2c3a57;border-radius:12px;padding:8px;text-align:center;transition:.2s;}
-  .ninja-card.active{border-color:#ff9d2f;box-shadow:0 0 14px rgba(255,157,47,.5);transform:scale(1.03);}
-  .ninja-card.dead{opacity:.45;filter:grayscale(1);}
-  .hp-text{font-size:13px;font-weight:bold;color:#ff9d2f;}
-  .hp-bar{height:9px;background:#2a3350;border-radius:6px;margin:3px 0 5px;overflow:hidden;}
+  /* ===== 对战界面整屏适配（两侧对战 + 随机背景） ===== */
+  #screen-battle{height:100vh;height:100dvh;display:flex;flex-direction:column;overflow:hidden;padding:6px 8px;max-width:none;margin:0;width:100%;
+    background-size:cover;background-position:center;background-repeat:no-repeat;}
+  #screen-battle::before{content:'';position:absolute;inset:0;background:rgba(4,7,16,.62);z-index:0;pointer-events:none;}
+  #screen-battle>*{position:relative;z-index:1;}
+  #battle-main{flex:1 1 auto;min-height:0;display:flex;flex-direction:row;align-items:stretch;justify-content:center;gap:8px;padding:2px 4px;overflow-y:auto;}
+  #ai-col,#user-col{flex:0 0 auto;width:205px;display:flex;flex-direction:column;gap:6px;align-items:center;}
+  .team-row{display:flex;flex-direction:column;gap:6px;align-items:center;margin:auto 0;}
+  .ninja-card{width:195px;background:rgba(22,29,48,.92);border:2px solid #2c3a57;border-radius:12px;padding:6px 8px;text-align:center;transition:.2s;}
+  .ninja-card.active{border-color:#ff9d2f;box-shadow:0 0 14px rgba(255,157,47,.55);transform:scale(1.02);}
+  .ninja-card.dead{opacity:.4;filter:grayscale(1);}
+  .hp-text{font-size:12px;font-weight:bold;color:#ff9d2f;}
+  .hp-bar{height:8px;background:#2a3350;border-radius:6px;margin:3px 0 4px;overflow:hidden;}
   .hp-fill{height:100%;background:linear-gradient(90deg,#4ade80,#22c55e);border-radius:6px;transition:width .3s;}
   .ninja-card.dead .hp-fill{background:#6b7280;}
-  .ninja-card .ninja-img{width:100%;height:100px;object-fit:contain;background:#0d1220;border-radius:8px;margin-bottom:4px;display:block;}
+  .ninja-card .ninja-img{width:100%;height:58px;object-fit:contain;background:#0d1220;border-radius:8px;margin-bottom:3px;display:block;}
   .ninja-card.dead .ninja-img{opacity:.45;filter:grayscale(1);}
-  .ninja-name{font-size:15px;font-weight:bold;color:#fff;}
-  .ninja-skills{font-size:10px;color:#7f92b8;margin-top:4px;line-height:1.4;}
-  .status{font-size:12px;margin-top:5px;color:#4ade80;min-height:15px;}
+  .ninja-name{font-size:14px;font-weight:bold;color:#fff;}
+  .ninja-skills{font-size:9px;color:#7f92b8;margin-top:2px;line-height:1.35;}
+  .status{font-size:11px;margin-top:3px;color:#4ade80;min-height:13px;}
   .ninja-card.dead .status{color:#f87171;}
+  .chakra-line{font-size:11px;margin-top:2px;color:#38bdf8;min-height:13px;font-weight:bold;}
+  .buffs{font-size:10px;margin-top:1px;color:#facc15;min-height:13px;}
+  .ninja-card.flash{animation:cardflash .5s ease-out;}
+  @keyframes cardflash{0%{box-shadow:0 0 0 rgba(255,255,255,0);}40%{box-shadow:0 0 34px rgba(255,255,255,.95);}100%{box-shadow:0 0 0 rgba(255,255,255,0);}}
 
-  #mid{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:2px 0;}
-  #card-zone{background:#141c30;border:1px solid #2a3a5c;border-radius:12px;padding:10px 20px;min-width:0;width:min(430px,92vw);text-align:center;flex:0 0 auto;}
-  .card-title{color:#9db2d0;font-size:13px;margin-bottom:6px;}
-  .skill-card{font-size:19px;color:#ffd9a0;}
-  .skill-card b{color:#ff9d2f;font-size:25px;}
-  .actions{margin-top:8px;display:flex;justify-content:center;gap:14px;}
-  .act-btn{padding:8px 28px;font-size:16px;font-weight:bold;border:none;border-radius:8px;cursor:pointer;}
+  #mid{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:2px 0;}
+  #card-zone{background:rgba(20,28,48,.9);border:1px solid #2a3a5c;border-radius:12px;padding:10px 16px;min-width:0;width:min(560px,96vw);text-align:center;flex:0 0 auto;box-shadow:0 0 22px rgba(0,0,0,.4);}
+  .card-title{color:#c6d4ee;font-size:13px;margin-bottom:8px;}
+  .cards-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+  .deal-card{background:#1b2438;border:1px solid #3a4a6b;border-radius:10px;padding:10px 14px;min-width:200px;max-width:46%;text-align:center;}
+  .deal-card.skill-card{font-size:17px;color:#ffd9a0;}
+  .deal-card.skill-card b{color:#ff9d2f;font-size:23px;}
+  .eff-name{font-size:18px;color:#c4b5fd;font-weight:bold;}
+  .eff-desc{font-size:12px;color:#9db2d0;margin-top:4px;line-height:1.5;}
+  .need-chakra{font-size:11px;color:#f87171;margin-top:4px;}
+  .chakra-hint{font-size:12px;color:#8fa2c4;margin:4px 0 0;font-weight:bold;}
+  .seal-warn{font-size:13px;color:#facc15;margin-top:6px;font-weight:bold;}
+  .ai-playing{outline:3px solid #f97316;border-radius:10px;box-shadow:0 0 16px rgba(249,115,22,.55);}
+  .skill-limit{font-size:12px;color:#8fa2c4;margin-top:6px;}
+  #hand-bar{flex:0 0 auto;align-self:center;display:flex;gap:16px;justify-content:center;align-items:stretch;flex-wrap:wrap;margin-top:10px;width:min(1200px,97vw);}
+  .hand-box{flex:1 1 auto;min-width:280px;max-width:590px;height:130px;overflow:hidden;border-radius:12px;padding:10px 14px;background:rgba(16,23,42,.92);box-sizing:border-box;}
+  .hand-box.hand-user{border:3px solid #ff9d2f;box-shadow:0 0 0 1px rgba(255,157,47,.35),0 0 12px rgba(255,157,47,.18);}
+  .hand-box.hand-ai{border:3px solid #4a5f8f;box-shadow:0 0 0 1px rgba(122,150,208,.28);}
+  .hand-title{font-size:15px;margin-bottom:8px;font-weight:bold;letter-spacing:1px;}
+  .hand-title.user{color:#ffcf8a;}
+  .hand-title.ai{color:#b6c6e8;}
+  /* 手牌始终排成一行（不换行），每张牌均分宽度，手牌越多每张越窄、字越小 */
+  .hand-row{display:flex;gap:8px;flex-wrap:nowrap;align-items:stretch;justify-content:center;}
+  .hand-card{background:#1c2540;border:2px solid #4a5f8f;border-radius:12px;padding:10px 20px;font-size:15px;color:#e6edfb;display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1 1 0;max-width:230px;min-width:0;overflow:hidden;text-align:center;box-sizing:border-box;}
+  .hand-card:hover{border-color:#ff9d2f;}
+  .hand-card.eff{color:#d0c4ff;border-color:#7c6fd0;}
+  .hand-label{max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .hand-dmg{color:#ff9d2f;font-weight:bold;margin-top:2px;}
+  .hand-empty{color:#5f6f92;font-size:13px;align-self:center;}
+  .hand-btns{display:flex;gap:8px;margin-top:7px;justify-content:center;}
+  .mini-btn{padding:6px 18px;font-size:14px;border:none;border-radius:7px;cursor:pointer;font-weight:bold;}
+  .mini-btn.play{background:#ff9d2f;color:#fff;}
+  .mini-btn.disc{background:#5b3a3a;color:#e8d0d0;}
+  .hand-card.ai-playing{border-color:#ff9d2f;box-shadow:0 0 9px rgba(255,157,47,.65);}
+  /* 手牌多时自动变小（少=大，多=小），始终一行放满 */
+  .hand-size-0 .hand-card,.hand-size-1 .hand-card{font-size:14px;padding:10px 20px;}
+  .hand-size-2 .hand-card{font-size:13px;padding:9px 16px;}
+  .hand-size-3 .hand-card{font-size:12px;padding:8px 14px;}
+  .hand-size-4 .hand-card{font-size:11px;padding:7px 12px;}
+  .hand-size-5 .hand-card{font-size:10px;padding:6px 10px;}
+  .hand-size-0 .hand-dmg,.hand-size-1 .hand-dmg{font-size:16px;}
+  .hand-size-2 .hand-dmg{font-size:15px;}
+  .hand-size-3 .hand-dmg{font-size:14px;}
+  .hand-size-4 .hand-dmg{font-size:13px;}
+  .hand-size-5 .hand-dmg{font-size:12px;}
+  .hand-size-2 .mini-btn{padding:5px 14px;font-size:13px;}
+  .hand-size-3 .mini-btn{padding:4px 12px;font-size:12px;}
+  .hand-size-4 .mini-btn{padding:3px 10px;font-size:11px;}
+  .hand-size-5 .mini-btn{padding:3px 8px;font-size:10px;}
+  .hand-size-3 .hand-btns{margin-top:5px;}
+  .hand-size-4 .hand-btns,.hand-size-5 .hand-btns{margin-top:4px;}
+  .actions{margin-top:10px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+  .act-btn{padding:8px 24px;font-size:15px;font-weight:bold;border:none;border-radius:8px;cursor:pointer;}
   .act-btn.play{background:linear-gradient(180deg,#ff9d2f,#f97316);color:#fff;}
   .act-btn.store{background:#2a3a5c;color:#cfd8ea;border:1px solid #3a4a6b;}
+  .act-btn.skip{background:#3b3f5e;color:#c9d2ee;border:1px solid #55649a;}
+  .act-btn.reroll{background:#2f4a5e;color:#bfe3ff;border:1px solid #3f6a8a;}
+  .act-btn.undo{background:#3a3355;color:#d9cfff;border:1px solid #5d4f8f;}
+  .act-btn.disc{background:#5b3a3a;color:#e8d0d0;border:1px solid #8a4a4a;}
+  .act-btn:disabled{background:#3a3f55;color:#7d8495;cursor:not-allowed;}
   .waiting{color:#ffcf8a;font-size:14px;}
-  #hand-zone{margin-top:2px;text-align:center;max-width:92vw;flex:0 0 auto;}
-  .hand-title{color:#9db2d0;font-size:13px;margin-bottom:4px;}
-  .hand-cards{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;}
-  .stored-card{background:#223052;border:1px solid #3a4a6b;border-radius:8px;padding:5px 10px;font-size:13px;color:#dfe6f5;}
-  .mini-btn{margin-left:8px;padding:3px 10px;font-size:12px;background:#f97316;color:#fff;border:none;border-radius:6px;cursor:pointer;}
-  .mini-btn:disabled{background:#3a3f55;color:#7d8495;cursor:not-allowed;}
-  .mini-btn.disc{background:#5b3a3a;border:1px solid #8a4a4a;}
-  .mini-btn.disc:hover{background:#7a4a4a;}
-  #log{flex:1 1 auto;min-height:0;overflow-y:auto;width:min(760px,92vw);background:#10172a;border:1px solid #2a3a5c;border-radius:8px;padding:8px 14px;font-size:12px;text-align:left;line-height:1.6;color:#c7d2ea;margin-top:2px;}
+  #log{flex:1 1 auto;min-height:0;overflow-y:auto;width:min(760px,92vw);background:rgba(16,23,42,.85);border:1px solid #2a3a5c;border-radius:8px;padding:8px 14px;font-size:12px;text-align:left;line-height:1.6;color:#c7d2ea;margin-top:2px;}
+
+  /* ===== 打击特效 ===== */
+  #screen-battle.shake{animation:shake .45s linear;}
+  @keyframes shake{0%,100%{transform:translate(0,0);}20%{transform:translate(-9px,4px);}40%{transform:translate(8px,-5px);}60%{transform:translate(-6px,-3px);}80%{transform:translate(5px,3px);}}
+  #fx{position:fixed;inset:0;pointer-events:none;z-index:60;}
+  .float-text{position:fixed;transform:translate(-50%,-50%);font-weight:bold;text-shadow:0 2px 6px rgba(0,0,0,.9);animation:floatUp .9s ease-out forwards;z-index:61;white-space:nowrap;}
+  @keyframes floatUp{0%{opacity:1;transform:translate(-50%,-40%);}70%{opacity:1;}100%{opacity:0;transform:translate(-50%,-130%);}}
+  .burst{position:fixed;width:90px;height:90px;border:4px solid #fff;border-radius:50%;transform:translate(-50%,-50%);animation:burstAnim .65s ease-out forwards;z-index:59;}
+  @keyframes burstAnim{0%{transform:translate(-50%,-50%) scale(.2);opacity:1;}100%{transform:translate(-50%,-50%) scale(2.8);opacity:0;}}
+  .beam{position:fixed;height:4px;transform-origin:0 50%;box-shadow:0 0 10px rgba(255,157,47,.9);z-index:58;opacity:.95;animation:beamFade .3s linear forwards;}
+  @keyframes beamFade{0%{opacity:.95;}100%{opacity:0;}}
 
   /* 手机端适配 */
   @media (max-width:700px){
@@ -75,40 +172,122 @@
     h1{font-size:22px;}
     h2{font-size:18px;}
     .sel-card img{height:110px;}
+    #battle-main{flex-direction:column;}
+    #ai-col,#user-col{width:100%;flex-direction:row;flex-wrap:wrap;gap:6px;}
+    .team-row{flex-direction:row;flex-wrap:wrap;gap:6px;}
     .ninja-card{width:30%;min-width:96px;padding:6px;}
-    .ninja-card .ninja-img{height:64px;}
+    .ninja-card .ninja-img{height:56px;}
     .ninja-skills{display:none;}
     .hp-text{font-size:11px;}
     .ninja-name{font-size:13px;}
-    #battle-header{gap:12px;font-size:12px;padding:5px 8px;}
-    #card-zone{width:96vw;padding:8px 6px;}
-    .skill-card{font-size:15px;}
-    .skill-card b{font-size:20px;}
-    .act-btn{padding:7px 20px;font-size:14px;}
-    .stored-card{font-size:12px;padding:4px 8px;}
+    .chakra-line{font-size:10px;}
+    .buffs{font-size:9px;}
+    #battle-header{gap:8px;font-size:12px;padding:5px 8px;}
+    #card-zone{width:98vw;padding:8px 6px;}
+    .deal-card{min-width:44%;max-width:48%;padding:8px 8px;}
+    .deal-card.skill-card{font-size:14px;}
+    .deal-card.skill-card b{font-size:18px;}
+    .act-btn{padding:7px 14px;font-size:13px;}
+    #hand-bar{width:98vw;gap:10px;}
+    .hand-box{min-width:0;max-width:none;height:130px;padding:8px 10px;}
+    .hand-card{padding:8px 14px;font-size:14px;}
+    .mini-btn{padding:5px 14px;font-size:13px;}
     #log{font-size:11px;padding:6px 10px;}
+    .diff-btn{padding:8px 12px;font-size:13px;}
+    #stats-panel .stat-grid{grid-template-columns:repeat(3,1fr);}
   }
 
   #overlay{position:fixed;inset:0;background:rgba(5,8,18,.78);display:none;align-items:center;justify-content:center;z-index:50;}
-  #overlay-box{background:#1b2438;border:2px solid #ff9d2f;border-radius:16px;padding:30px 50px;text-align:center;}
+  #overlay-box{background:#1b2438;border:2px solid #ff9d2f;border-radius:16px;padding:30px 50px;text-align:center;max-width:92vw;}
   #overlay-box h2{font-size:30px;color:#ffd9a0;}
   #overlay-box p{color:#9db2d0;margin-top:8px;}
+  #overlay-box .pts{font-weight:bold;font-size:16px;margin-top:6px;}
+  #overlay-box .next-rank{color:#8fa2c4;font-size:13px;margin-top:6px;}
 </style>
 </head>
 <body>
 
-  <!-- 开始界面 -->
-  <div id="screen-start" class="screen">
+  <!-- 登录界面 -->
+  <div id="screen-login" class="screen">
     <h1>🔥 火影忍者 · 回合制对战</h1>
-    <p class="sub">自选 3 名忍者，与系统轮流释放技能</p>
+    <p class="sub">请先登录你的账号（首次进入请注册）</p>
+    <div id="login-box">
+      <label>用户名</label>
+      <input id="login-user" maxlength="16" placeholder="输入用户名"
+             onkeydown="if(event.key==='Enter')doLogin()">
+      <label>密码</label>
+      <input id="login-pass" type="password" maxlength="20" placeholder="输入密码"
+             onkeydown="if(event.key==='Enter')doLogin()">
+      <p id="login-msg"></p>
+      <div class="login-actions">
+        <button class="big-btn" onclick="doLogin()">登录</button>
+        <button class="big-btn" style="background:#26324a;border:1px solid #3a4a6b;box-shadow:none" onclick="doRegister()">注册</button>
+      </div>
+      <p class="login-tip">提示：第一次玩点「注册」创建账号，登录过一次后下次会<b>自动登录</b>。<br>每个账号单独保存积分、段位和连胜战绩（保存在当前浏览器中）。</p>
+    </div>
+  </div>
+
+  <!-- 开始界面 -->
+  <div id="screen-start" class="screen" style="display:none">
+    <h1>🔥 火影忍者 · 回合制对战</h1>
+    <p class="sub" id="welcome-line">自选 3 名忍者，与系统轮流释放技能</p>
+
     <button class="big-btn" onclick="openSelect()">开始游戏</button>
-    <p class="tip">
-      规则：每个忍者登场时各随机发 <strong>3 张手牌</strong>，每回合再抽一张技能牌
-      （技能1=50% / 技能2=40% / 技能3=10%），可选择<strong>出牌</strong>或<strong>存牌</strong>。
-      手牌上限 <strong>5 张</strong>，超出会自动丢弃低伤害牌，也可自行<strong>舍弃</strong>。
-      每个忍者 100 血，<strong>倒下的忍者其技能牌全部消散</strong>，哪边先倒 3 个即失败，
-      第一局先手随机，之后每局先手交替。系统会随机出牌或存牌（出牌概率更大）。
-    </p>
+
+    <h2 style="font-size:18px;margin-top:26px">⚔️ 选择难度</h2>
+    <div class="diff-row">
+      <button class="diff-btn sel" id="diff-normal" onclick="setDiff('normal')">普通<small>胜 +10 分 · 系统 100 血</small></button>
+      <button class="diff-btn" id="diff-hard" onclick="setDiff('hard')">困难<small>胜 +20 分 · 系统 125 血</small></button>
+      <button class="diff-btn" id="diff-hell" onclick="setDiff('hell')">地狱<small>胜 +30 分 · 系统 150 血 · 集火你低血量忍者</small></button>
+    </div>
+
+    <h2 style="font-size:18px">🏆 我的战绩</h2>
+    <div id="stats-panel">
+      <div class="rank-line">
+        <span class="rank-name" id="rank-name">忍者学员</span>
+        <span class="rank-score" id="rank-score">积分：0 分</span>
+      </div>
+      <div class="stat-grid">
+        <div class="stat-item"><b id="st-games">0</b><span>总局数</span></div>
+        <div class="stat-item"><b id="st-wins">0</b><span>胜场</span></div>
+        <div class="stat-item"><b id="st-loss">0</b><span>负场</span></div>
+        <div class="stat-item"><b id="st-streak">0</b><span>当前连胜</span></div>
+        <div class="stat-item"><b id="st-best">0</b><span>最高连胜</span></div>
+        <div class="stat-item"><b id="st-rank">忍者学员</b><span>当前段位</span></div>
+      </div>
+      <div id="rank-bar"><div id="rank-fill" style="width:0%"></div></div>
+      <div id="rank-next">距「下忍」还需 50 分</div>
+    </div>
+
+    <h2 style="font-size:18px;margin-top:24px">📜 游戏规则</h2>
+    <div class="rules">
+      <div class="rule-sec">【基本规则】</div>
+      · 每局你自选 <b>3 名忍者</b>，系统随机 3 名，双方轮流行动<br>
+      · 忍者倒下后下一名自动上场，倒下忍者的蓄力（查克拉、增益）全部重置；哪边 3 名忍者全部倒下即失败<br>
+      · 第一局先手随机，之后每局先手<b>交替</b><br>
+      <div class="rule-sec">【抽牌与手牌】</div>
+      · 开局每人<b>卡槽 3 张</b>随机牌（技能/特效），下方显示双方手牌<br>
+      · 每回合再随机出现 <b>2 张牌</b>供你选择（技能牌：15/25/50伤=50/40/10%；特效牌五种概率相同）<br>
+      · 手牌上限 <b>5 张</b>；存牌超上限时需先舍弃卡槽里的牌<br>
+      <div class="rule-sec">【每回合行动：二选一】</div>
+      · <b>出牌</b>：可先打出<b>数张特效牌</b>，然后技能牌<b>只能出 1 张</b>（连击牌可再出 1 张）<br>
+      · <b>全部存牌</b>：把本轮 2 张牌全部存入卡槽，跳过出牌；下一轮会随机出现 <b>3 张牌选 1 张</b><br>
+      · 抽到技能3但查克拉不足时，先全部存牌，下轮查克拉够了再打，不浪费<br>
+      <div class="rule-sec">【查克拉】</div>
+      · 每回合 <b>+1 点查克拉</b>（上限 2）；技能3（50 伤）需消耗 <b>2 点查克拉</b>才能打出<br>
+      <div class="rule-sec">【特效牌效果】</div>
+      · <b>暴击</b>：你的下次技能伤害×1.5（可叠加）<br>
+      · <b>吸血</b>：你的下次技能回复造成伤害的 50%（可叠加）<br>
+      · <b>连击</b>：本回合可再打出 1 张技能牌<br>
+      · <b>灼烧</b>：对手接下来两回合每回合开局扣 10 血<br>
+      · <b>封印</b>：对手下回合不能出牌（技能、特效都不能用，只能存牌）<br>
+      · 特效牌不算出牌、不耗查克拉，使用后立即生效<br>
+      <div class="rule-sec">【难度与积分】</div>
+      · 普通 <b>+10</b> / 困难 <b>+20</b> / 地狱 <b>+30</b> 分<br>
+      · 段位：<b>50分</b>下忍 · <b>100分</b>中忍 · <b>150分</b>上忍 · <b>250分</b>暗部 · <b>400分</b>影级 · <b>600分</b>超影
+    </div>
+
+    <button class="small-btn" onclick="logout()">🔄 更换账号</button>
   </div>
 
   <!-- 选人界面 -->
@@ -124,20 +303,27 @@
   <!-- 对战界面 -->
   <div id="screen-battle" class="screen" style="display:none">
     <div id="battle-header"></div>
-    <div id="ai-row" class="team-row"></div>
-    <div id="mid">
-      <div id="card-zone"></div>
-      <div id="hand-zone"></div>
-      <div id="log"></div>
+    <div id="battle-main">
+      <div id="ai-col"><div id="ai-row" class="team-row"></div></div>
+      <div id="mid">
+        <div id="card-zone"></div>
+        <div id="log"></div>
+      </div>
+      <div id="user-col"><div id="user-row" class="team-row"></div></div>
     </div>
-    <div id="user-row" class="team-row"></div>
+    <div id="hand-bar"></div>
   </div>
+
+  <!-- 特效层 -->
+  <div id="fx"></div>
 
   <!-- 结算弹窗 -->
   <div id="overlay">
     <div id="overlay-box">
       <h2 id="overlay-title"></h2>
       <p id="overlay-sub"></p>
+      <p id="overlay-pts" class="pts"></p>
+      <p id="overlay-next-rank" class="next-rank"></p>
       <button class="big-btn" onclick="openStart()">再来一局</button>
     </div>
   </div>
@@ -157,321 +343,951 @@ const NINJAS = [
   {name:'自来也',     img:'images/自来也.png',     skills:['螺旋丸','蛤蟆油炎弹','仙法·超大玉螺旋丸']},
   {name:'大蛇丸',     img:'images/大蛇丸.png',     skills:['潜影蛇手','草薙剑·蛇影斩','八岐之术']},
   {name:'我爱罗',     img:'images/我爱罗.jpg',     skills:['砂缚柩','砂瀑送葬','砂漠·层大葬']},
-  {name:'日向宁次',   img:'images/日向宁次.jpg',   skills:['八卦三十二掌','八卦六十四掌','八卦空掌']},
+  {name:'日向宁次',   img:'images/日向宁次.png',   skills:['八卦三十二掌','八卦六十四掌','八卦空掌']},
   {name:'洛克李',     img:'images/洛克李.jpg',     skills:['木叶旋风','表莲华','里莲华']},
   {name:'迈特凯',     img:'images/迈特凯.png',     skills:['木叶刚力旋风','朝孔雀','昼虎']},
 ];
-const DMG = [15, 25, 50]; // 技能1 / 2 / 3 伤害
-const HAND_LIMIT = 5;     // 手牌上限
+const DMG = [15, 25, 50];          // 技能1 / 2 / 3 伤害
+const CHAKRA_COST = 2;             // 技能3消耗的查克拉
+const CHAKRA_MAX = 2;              // 查克拉上限
+const HAND_MAX = 5;                // 双方手牌卡槽上限
+const AI_START_DELAY = 1500;       // 系统开始行动前的停顿（毫秒）
+const AI_STEP_DELAY  = 1000;       // 系统每出一步的停顿（放慢方便看清）
 
-// ===== 全局状态 =====
-let state = null;        // 当前对局状态
-let gameCount = 0;       // 已进行的局数
-let lastUserStarts = null; // 上一局是否用户先手
-let selected = [];       // 选人界面的选择
+// ===== 难度配置 =====
+const DIFF_INFO = {
+  normal:{label:'普通', pts:10, aiMax:100, aiPlay:0.70},
+  hard:  {label:'困难', pts:20, aiMax:125, aiPlay:0.82},
+  hell:  {label:'地狱', pts:30, aiMax:150, aiPlay:0.90},
+};
+
+// ===== 决斗场背景（每次对战随机一张） =====
+const BG_FILES = [
+  '决斗场照片/0e17322c976e00494af337f55752f2b.jpg',
+  '决斗场照片/2ea49f10ca43106fbcc013a6e0c4b6f.jpg',
+  '决斗场照片/a0e78969935803e7027c449d32f38da.jpg',
+];
+
+// ===== 段位 =====
+const RANKS = [
+  {need:0,   name:'忍者学员'},
+  {need:50,  name:'下忍'},
+  {need:100, name:'中忍'},
+  {need:150, name:'上忍'},
+  {need:250, name:'暗部'},
+  {need:400, name:'影级'},
+  {need:600, name:'超影'},
+];
+
+// ===== 特效牌（五种概率相同） =====
+const EFFECT_DEFS = {
+  crit: {name:'暴击', desc:'你的下次技能伤害×1.5'},
+  drain:{name:'吸血', desc:'你的下次技能回复伤害50%'},
+  combo:{name:'连击', desc:'使用后可再出 1 张技能牌'},
+  burn: {name:'灼烧', desc:'对手接下来两回合每回合扣10血'},
+  seal: {name:'封印', desc:'对手下回合不能出牌（只能存牌）'},
+};
+const EFFECT_KEYS = ['crit','drain','combo','burn','seal'];
+
+// ===== 音效（Web Audio 合成，无需外部文件） =====
+let soundOn = true;
+try{ soundOn = localStorage.getItem('naruto_sound')!=='off'; }catch(e){}
+let audioCtx = null;
+function ensureAudio(){
+  try{
+    if(!audioCtx) audioCtx = new (window.AudioContext||window.webkitAudioContext)();
+    if(audioCtx.state==='suspended') audioCtx.resume();
+  }catch(e){}
+}
+function beep(freq,dur,type,vol,delay,slide){
+  try{
+    ensureAudio();
+    const c=audioCtx, t=c.currentTime+(delay||0);
+    const o=c.createOscillator(), g=c.createGain();
+    o.type=type||'square';
+    o.frequency.setValueAtTime(freq,t);
+    if(slide) o.frequency.exponentialRampToValueAtTime(slide,t+dur);
+    g.gain.setValueAtTime(0.0001,t);
+    g.gain.exponentialRampToValueAtTime(vol||0.12,Math.min(t+0.012,t+dur));
+    g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+    o.connect(g); g.connect(c.destination);
+    o.start(t); o.stop(t+dur+0.03);
+  }catch(e){}
+}
+function sfx(kind){
+  if(!soundOn) return;
+  switch(kind){
+    case 'click':   beep(620,0.06,'sine',0.08); break;
+    case 'play':    beep(330,0.11,'square',0.12); beep(210,0.14,'square',0.10,0.05); break;
+    case 'skill1':  beep(280,0.07,'square',0.12); beep(170,0.09,'square',0.10,0.04); break;
+    case 'skill2':  beep(250,0.08,'sawtooth',0.14); beep(360,0.09,'sawtooth',0.13,0.05); beep(520,0.10,'sawtooth',0.12,0.11); break;
+    case 'crit':    beep(520,0.07,'sawtooth',0.16); beep(740,0.09,'sawtooth',0.16,0.06); beep(980,0.14,'sawtooth',0.18,0.12); break;
+    case 'hit':     beep(140,0.13,'triangle',0.22); beep(95,0.12,'sine',0.16,0.02); break;
+    case 'dead':    beep(190,0.2,'sawtooth',0.18); beep(120,0.3,'sawtooth',0.18,0.12); break;
+    case 'heal':    beep(600,0.1,'sine',0.13); beep(820,0.14,'sine',0.13,0.09); break;
+    case 'combo':   beep(440,0.06,'square',0.12); beep(660,0.06,'square',0.12,0.06); beep(880,0.08,'square',0.12,0.12); break;
+    case 'burn':    beep(95,0.28,'sawtooth',0.14); beep(70,0.3,'sawtooth',0.12,0.1); break;
+    case 'seal':    beep(400,0.09,'sine',0.11); beep(300,0.12,'sine',0.11,0.1); break;
+    case 'ultimate':beep(392,0.09,'sawtooth',0.15); beep(523,0.09,'sawtooth',0.16,0.08); beep(659,0.11,'sawtooth',0.17,0.16); beep(784,0.22,'sawtooth',0.19,0.24); break;
+    case 'draw':    beep(500,0.05,'sine',0.07); break;
+    case 'buff':    beep(700,0.07,'sine',0.10); beep(900,0.08,'sine',0.10,0.07); break;
+    case 'win':     beep(523,0.12,'triangle',0.16); beep(659,0.12,'triangle',0.16,0.12); beep(784,0.14,'triangle',0.16,0.24); beep(1047,0.3,'triangle',0.18,0.36); break;
+    case 'lose':    beep(523,0.16,'triangle',0.15); beep(440,0.16,'triangle',0.15,0.16); beep(349,0.3,'triangle',0.15,0.32); break;
+  }
+}
+function toggleSound(){
+  soundOn = !soundOn;
+  try{ localStorage.setItem('naruto_sound', soundOn?'on':'off'); }catch(e){}
+  if(soundOn) sfx('click');
+  renderBattleHeader();
+}
+
+// ===== 账号系统（自动登录） =====
+const USERS_KEY = 'naruto_users_v2';
+const LOGIN_KEY = 'naruto_login';
+let users = loadUsers();
+let currentUser = null;
+function loadUsers(){ try{ return JSON.parse(localStorage.getItem(USERS_KEY))||{}; }catch(e){ return {}; } }
+function saveUsers(){ try{ localStorage.setItem(USERS_KEY, JSON.stringify(users)); }catch(e){} }
+function hashPW(s){ let h=5381; for(let i=0;i<s.length;i++){ h=((h*33)^s.charCodeAt(i))>>>0; } return h.toString(36); }
+function defaultStats(){ return {games:0,wins:0,losses:0,streak:0,best:0,score:0}; }
+function getStats(){
+  if(!currentUser || !users[currentUser]) return defaultStats();
+  return users[currentUser].stats;
+}
+function rankFor(score){
+  let r=RANKS[0];
+  for(const x of RANKS){ if(score>=x.need) r=x; }
+  return r;
+}
+
+function doLogin(){
+  const u=document.getElementById('login-user').value.trim();
+  const p=document.getElementById('login-pass').value;
+  const msg=document.getElementById('login-msg');
+  if(!u||!p){ msg.textContent='请输入用户名和密码'; return; }
+  const acc=users[u];
+  if(!acc){ msg.textContent='账号不存在，请先注册'; return; }
+  if(acc.pw!==hashPW(p)){ msg.textContent='密码错误'; return; }
+  enterGame(u);
+}
+function doRegister(){
+  const u=document.getElementById('login-user').value.trim();
+  const p=document.getElementById('login-pass').value;
+  const msg=document.getElementById('login-msg');
+  if(!u){ msg.textContent='请输入用户名'; return; }
+  if(!/^[一-龥A-Za-z0-9_]{2,16}$/.test(u)){ msg.textContent='用户名需 2-16 位，只能含中文/字母/数字/下划线'; return; }
+  if(p.length<4){ msg.textContent='密码至少 4 位'; return; }
+  if(users[u]){ msg.textContent='该用户名已被注册，请直接登录'; return; }
+  users[u]={pw:hashPW(p), stats:defaultStats()};
+  saveUsers();
+  enterGame(u);
+}
+function enterGame(u){
+  currentUser=u;
+  try{ localStorage.setItem(LOGIN_KEY, u); }catch(e){} // 记住登录状态 → 下次自动登录
+  sfx('click');
+  openStart();
+}
+function logout(){
+  currentUser=null;
+  try{ localStorage.removeItem(LOGIN_KEY); }catch(e){}
+  showScreen('login');
+}
 
 // ===== 界面切换 =====
 function showScreen(name){
-  ['start','select','battle'].forEach(s=>{
+  ['login','start','select','battle'].forEach(s=>{
     document.getElementById('screen-'+s).style.display = (s===name) ? '' : 'none';
   });
-  if(name==='start') document.getElementById('overlay').style.display='none';
+  document.getElementById('overlay').style.display = 'none';
 }
-function openStart(){ showScreen('start'); }
-function openSelect(){
-  selected = [];
-  showScreen('select');
-  renderSelect();
+function openStart(){
+  if(!currentUser){ showScreen('login'); return; }
+  document.getElementById('welcome-line').textContent =
+    '欢迎回来，'+currentUser+'　·　自选 3 名忍者，与系统轮流释放技能';
+  renderStats();
+  renderDiffButtons();
+  showScreen('start');
 }
 
-// ===== 选人 =====
+// ===== 战绩与难度 =====
+function renderStats(){
+  const s=getStats();
+  const rank=rankFor(s.score);
+  document.getElementById('rank-name').textContent = rank.name;
+  document.getElementById('rank-score').textContent = '积分：'+s.score+' 分';
+  document.getElementById('st-games').textContent  = s.games;
+  document.getElementById('st-wins').textContent   = s.wins;
+  document.getElementById('st-loss').textContent   = s.losses;
+  document.getElementById('st-streak').textContent = s.streak;
+  document.getElementById('st-best').textContent   = s.best;
+  document.getElementById('st-rank').textContent   = rank.name;
+  const ci=RANKS.findIndex(r=>r.need===rank.need);
+  const next=RANKS[ci+1];
+  if(next){
+    const pct=Math.min(100, Math.round((s.score-rank.need)/(next.need-rank.need)*100));
+    document.getElementById('rank-fill').style.width=pct+'%';
+    document.getElementById('rank-next').textContent='距「'+next.name+'」还需 '+(next.need-s.score)+' 分';
+  }else{
+    document.getElementById('rank-fill').style.width='100%';
+    document.getElementById('rank-next').textContent='已到达最高段位「'+rank.name+'」！';
+  }
+}
+let difficulty = 'normal';
+try{ const d=localStorage.getItem('naruto_diff'); if(DIFF_INFO[d]) difficulty=d; }catch(e){}
+function setDiff(d){
+  difficulty=d;
+  try{ localStorage.setItem('naruto_diff', d); }catch(e){}
+  sfx('click');
+  renderDiffButtons();
+}
+function renderDiffButtons(){
+  ['normal','hard','hell'].forEach(d=>{
+    document.getElementById('diff-'+d).className='diff-btn'+(d===difficulty?' sel':'');
+  });
+}
+
+// ===== 选人（全部忍者一次显示完全） =====
 function renderSelect(){
-  const grid = document.getElementById('select-grid');
+  const grid=document.getElementById('select-grid');
   grid.innerHTML = NINJAS.map(n=>{
-    const sel = selected.indexOf(n.name);
+    const sel=selected.indexOf(n.name);
     return '<button class="sel-card'+(sel>=0?' sel':'')+'" onclick="toggleSelect(\''+n.name+'\')">'
       + '<img src="'+n.img+'" alt="'+n.name+'" onerror="this.style.display=\'none\'">'
       + '<div class="sel-name">'+n.name+'</div>'
-      + '<div class="sel-skills">'+n.skills.map((sk,i)=>sk+'（'+DMG[i]+'伤）').join('<br>')+'</div>'
+      + '<div class="sel-skills">'+n.skills.map((sk,i)=>sk+'（'+DMG[i]+'伤'+(i===2?'·需2查克拉':'')+'）').join('<br>')+'</div>'
       + (sel>=0 ? '<div class="sel-order">'+(sel+1)+'</div>' : '')
       + '</button>';
   }).join('');
   document.getElementById('select-hint').textContent =
-    '已选 ' + selected.length + ' / 3' + (selected.length<3 ? '　（再选 '+(3-selected.length)+' 名）' : '');
+    '已选 '+selected.length+' / 3' + (selected.length<3 ? '　（再选 '+(3-selected.length)+' 名）' : '');
   document.getElementById('btn-fight').disabled = selected.length !== 3;
 }
 function toggleSelect(name){
-  const i = selected.indexOf(name);
+  const i=selected.indexOf(name);
   if(i>=0) selected.splice(i,1);
   else if(selected.length<3) selected.push(name);
   else { alert('只能选择 3 名忍者！'); return; }
+  sfx('click');
+  renderSelect();
+}
+function openSelect(){
+  selected=[];
+  sfx('click');
+  showScreen('select');
   renderSelect();
 }
 function shuffle(arr){
-  const a = arr.slice();
+  const a=arr.slice();
   for(let i=a.length-1;i>0;i--){
-    const j = Math.floor(Math.random()*(i+1));
+    const j=Math.floor(Math.random()*(i+1));
     [a[i],a[j]]=[a[j],a[i]];
   }
   return a;
 }
 
+// ===== 全局状态 =====
+let state = null;           // 当前对局状态
+let gameCount = 0;          // 本会话已进行的局数
+let lastUserStarts = null;  // 上一局是否用户先手
+let selected = [];          // 选人界面的选择
+
 // ===== 开始对局 =====
 function startBattle(){
   if(selected.length!==3) return;
-  const userN = selected.map(name=>NINJAS.find(n=>n.name===name));
-  const rest  = shuffle(NINJAS.filter(n=>selected.indexOf(n.name)<0)).slice(0,3); // 系统随机 3 名
+  const userN=selected.map(name=>NINJAS.find(n=>n.name===name));
+  const rest=shuffle(NINJAS.filter(n=>selected.indexOf(n.name)<0)).slice(0,3);
+  const info=DIFF_INFO[difficulty];
 
   state = {
-    userTeam: userN.map(ninja=>({ninja,hp:100})),
-    aiTeam:   rest.map(ninja=>({ninja,hp:100})),
+    userTeam: userN.map(ninja=>({ninja, hp:100, max:100})),
+    aiTeam:   rest.map(ninja=>({ninja, hp:info.aiMax, max:info.aiMax})),
     userIdx:0, aiIdx:0,
-    userHand:[], aiHand:[],
-    dealtCard:null,
+    userChakra:0, aiChakra:0,
+    userCrit:0, userDrain:0,                // 增益叠加数（暴击×1.5 / 吸血50%）
+    aiCrit:0,   aiDrain:0,
+    burnUser:null, burnAi:null,             // 灼烧 {dmg, turns}
+    sealedUser:false, sealedAi:false,       // 封印（不能出牌，只能存牌）
+    userHand:[], aiHand:[],                 // 手牌卡槽（上限5）
+    userStoredAll:false, aiStoredAll:false, // 上轮是否全部存牌 → 下轮3选1
+    userSkillsPlayed:0, userCombo:0,        // 本回合技能数 / 连击（每回合重置）
+    aiSkillsPlayed:0,   aiCombo:0,
+    dealtCards:[],
+    pickFrom:0,                             // >0 = 三选一模式
+    userPicked:false,                       // 本轮是否已选 1 张牌进卡槽（选后才能出牌）
+    undoStack:[],                           // 撤销出牌：每出一张牌前的状态快照
+    _aiSteps:null, _aiStepIdx:0, aiPlayingIdx:null, // 系统逐步出牌
     log:[],
     over:false,
   };
+  // 开局每人卡槽 3 张随机牌（技能/特效）
+  state.userHand = [0,1,2].map(()=>randomCard(userN[0]));
+  state.aiHand   = [0,1,2].map(()=>randomCard(rest[0]));
 
-  // 先手：第一局随机，之后与上一局相反
   if(gameCount===0) state.userStarts = Math.random()<0.5;
   else state.userStarts = !lastUserStarts;
   lastUserStarts = state.userStarts;
   gameCount++;
   state.turn = state.userStarts ? 'user' : 'ai';
-
-  // 开局：双方第一个忍者登场，各获得 3 张起始手牌
-  grantStartHand('user');
-  grantStartHand('ai');
+  state.bg = BG_FILES[Math.floor(Math.random()*BG_FILES.length)];
 
   showScreen('battle');
-  startTurn(); // 负责抽第一张牌并渲染界面
+  startTurn();
 }
 
 function getActive(side){
   const t = state[side==='user'?'userTeam':'aiTeam'];
   return t[state[side+'Idx']];
 }
-
 function addLog(msg){ state.log.push(msg); }
+function capS(side){ return side==='user' ? 'User' : 'Ai'; }
 
-// ===== 抽牌（加权随机：技能1=50%，技能2=40%，技能3=10%） =====
+// ===== 抽牌：每回合 2 张，每张 50% 技能 / 50% 特效 =====
 function randomSkillIdx(){
-  const r = Math.random();
-  if(r < 0.5) return 0; // 技能1 = 50%
-  if(r < 0.9) return 1; // 技能2 = 40%
-  return 2;             // 技能3 = 10%
+  const r=Math.random();
+  if(r<0.5) return 0; // 技能1 = 50%
+  if(r<0.9) return 1; // 技能2 = 40%
+  return 2;           // 技能3 = 10%
 }
-function makeCard(ninja){
-  const idx = randomSkillIdx();
-  return { skill: ninja.skills[idx], dmg: DMG[idx], ninja: ninja.name }; // 记录牌属于哪个忍者
+function randomCard(ninja){
+  if(Math.random()<0.5){
+    // 技能牌
+    const idx=randomSkillIdx();
+    return {type:'skill', skill:ninja.skills[idx], dmg:DMG[idx], effIdx:idx, ninja:ninja.name};
+  }
+  // 特效牌（五种概率相同）
+  return {type:'effect', effect:EFFECT_KEYS[Math.floor(Math.random()*5)], ninja:ninja.name};
 }
-function drawCard(){
-  state.dealtCard = makeCard(getActive(state.turn).ninja); // 传忍者对象（含 skills）
+function dealCards(count){
+  state.dealtCards=[];
+  const act=getActive(state.turn);
+  for(let i=0;i<count;i++) state.dealtCards.push(randomCard(act.ninja));
+}
+function cardLabel(card){
+  if(card.type==='skill') return card.skill+'（'+card.dmg+'伤）';
+  return '✨'+EFFECT_DEFS[card.effect].name+'牌';
+}
+function cardHtml(card){
+  if(card.type==='skill'){
+    let html='<div class="deal-card skill-card">【'+card.skill+'】 <b>'+card.dmg+'</b> 伤害</div>';
+    if(card.dmg>=50) html+='<div class="need-chakra">⚡ 需 '+CHAKRA_COST+' 查克拉（当前 '+state[state.turn+'Chakra']+' / '+CHAKRA_MAX+'）</div>';
+    return html;
+  }
+  const d=EFFECT_DEFS[card.effect];
+  return '<div class="deal-card"><div class="eff-name">✨ '+d.name+'牌</div><div class="eff-desc">'+d.desc+'</div></div>';
+}
+function canPlaySkill(side, card){
+  if(state['sealed'+capS(side)]) return false;              // 被封印不能出牌
+  if(card.dmg>=50) return state[side+'Chakra'] >= CHAKRA_COST;
+  return true;
+}
+function canPlayEffect(side, card){
+  return !state['sealed'+capS(side)];                       // 被封印时特效牌也不能用
 }
 function startTurn(){
   if(!state || state.over) return;
-  drawCard();
+  const side=state.turn, S=capS(side);
+  // 开局先结算灼烧（每回合扣10，持续2回合）
+  const burn=state['burn'+S];
+  if(burn){
+    addLog('🔥 灼烧：'+getActive(side).ninja.name+' 开局受到 '+burn.dmg+' 点伤害（剩 '+burn.turns+' 回合）');
+    sfx('burn');
+    burn.turns--;
+    if(burn.turns<=0) state['burn'+S]=null;
+    if(!dealDamage(side, burn.dmg)) return;
+  }
+  // 重置本回合的技能次数与连击
+  state[side+'SkillsPlayed']=0;
+  state[side+'Combo']=0;
+  if(side==='user'){ state.userPicked=false; state.undoStack=[]; } // 新一轮先进选牌阶段，撤销栈清空
+  // 发牌：上轮全部存牌 → 随机出现 3 张选 1；否则随机出现 2 张
+  const storedAll = state[side+'StoredAll'];
+  state[side+'StoredAll']=false;
+  if(storedAll){
+    state.pickFrom = 3;
+    dealCards(3);
+    addLog('📦 上轮全部存牌，本轮随机出现 3 张牌，请选择 1 张');
+  }else{
+    state.pickFrom = 0;
+    dealCards(2);
+  }
   renderBattle();
-  if(state.turn==='ai') setTimeout(aiAct, 1500); // 系统思考（1.5 秒，略慢但有节奏）
+  if(side==='user') sfx('draw');
+  if(side==='ai') setTimeout(aiAct, AI_START_DELAY);
+}
+function endTurn(next){
+  // 切换后清除上一行动方的封印（封印只影响对方的一个回合）
+  if(next==='user') state.sealedAi=false;
+  else state.sealedUser=false;
+  state.turn=next;
+  startTurn();
 }
 
-// ===== 手牌管理：上限 5 张，超出自动丢弃伤害最低的一张 =====
-function addToHand(side, card){
-  const hand = side==='user' ? state.userHand : state.aiHand;
-  hand.push(card);
-  trimHand(side);
-}
-function trimHand(side){
-  const hand = side==='user' ? state.userHand : state.aiHand;
-  while(hand.length > HAND_LIMIT){
-    let low = 0;
-    for(let i=1;i<hand.length;i++){
-      if(hand[i].dmg < hand[low].dmg) low = i;
-    }
-    const removed = hand.splice(low,1)[0];
-    addLog('🗑️ 手牌超过 '+HAND_LIMIT+' 张，自动丢弃低伤害牌【'+removed.skill+'】('+removed.dmg+')');
-  }
-}
-// 每个忍者登场时，获得 3 张起始手牌
-function grantStartHand(side){
-  const act = getActive(side);
-  for(let i=0;i<3;i++){
-    addToHand(side, makeCard(act.ninja));
-  }
-  addLog((side==='user'?'🫵 你方 ':'🤖 系统方 ')+act.ninja.name+' 登场，获得 3 张起始手牌');
-}
-
-// ===== 造成伤害 =====
-function dealDamage(targetSide, dmg){
+// ===== 造成伤害（可指定目标；地狱难度下系统会集火低血量忍者） =====
+function dealDamage(targetSide, dmg, targetIdx){
   const t  = state[targetSide==='user'?'userTeam':'aiTeam'];
-  const idx= state[targetSide+'Idx'];
+  const idx = (targetIdx!==undefined) ? targetIdx : state[targetSide+'Idx'];
   const m  = t[idx];
+  const prev = m.hp;
   m.hp = Math.max(0, m.hp - dmg);
+  fxDamage(targetSide, idx, dmg);
   addLog('🔥 '+m.ninja.name+' 受到 '+dmg+' 点伤害，剩余 '+m.hp+' 血');
-  if(m.hp===0){
+  // 查克拉：每造成伤害回复 1 点（上限 2，可继承）
+  if(prev>0){
+    const atk = targetSide==='user' ? 'ai' : 'user';
+    state[atk+'Chakra'] = Math.min(CHAKRA_MAX, state[atk+'Chakra']+1);
+  }
+  if(prev>0 && m.hp===0){
     addLog('💀 '+m.ninja.name+' 倒下了！');
-    discardNinjaCards(m.ninja.name); // 该忍者的技能牌全部消散
-    let next = idx+1;
-    while(next<t.length && t[next].hp<=0) next++;
-    if(next>=t.length){
+    sfx('dead');
+    if(idx === state[targetSide+'Idx']){
+      // 出击中的忍者倒下 → 下一位上场（查克拉保留，可继承）
+      let next=idx+1;
+      while(next<t.length && t[next].hp<=0) next++;
+      if(next>=t.length){
+        state[targetSide+'Idx']=next;
+        state.over=true;
+        gameOver(targetSide);
+        return false;
+      }
       state[targetSide+'Idx']=next;
-      state.over=true;
-      gameOver(targetSide); // 该方 3 人全灭
-      return false;
+      state[targetSide+'Crit']=0; state[targetSide+'Drain']=0;   // 增益不继承
+      state[targetSide+'Hand']=[0,1,2].map(()=>randomCard(t[next].ninja)); // 新忍者随机获得 3 张新手牌
+      addLog('🃏 新忍者随机获得 3 张新手牌（查克拉 '+state[targetSide+'Chakra']+' 点保留）');
+      addLog('🚀 '+t[next].ninja.name+' 上场！');
     }
-    state[targetSide+'Idx']=next;
-    addLog('🚀 '+t[next].ninja.name+' 上场！');
-    grantStartHand(targetSide); // 新忍者登场获得 3 张起始手牌
+  }
+  return true;
+}
+function lowestHpIndex(side){
+  const t=state[side==='user'?'userTeam':'aiTeam'];
+  let best=-1;
+  for(let i=0;i<t.length;i++){
+    if(t[i].hp<=0) continue;
+    if(best===-1 || t[i].hp<t[best].hp) best=i;
+  }
+  return best===-1 ? state[side+'Idx'] : best;
+}
+function healActive(side, amt){
+  const m=getActive(side);
+  const before=m.hp;
+  m.hp=Math.min(m.max, m.hp+amt);
+  const healed=m.hp-before;
+  if(healed<=0) return;
+  addLog('💚 '+m.ninja.name+' 回复 '+healed+' 血');
+  sfx('heal');
+  fxHeal(side, state[side+'Idx'], healed);
+}
+
+// ===== 使用技能牌（出牌） =====
+function playSkill(side, card){
+  const target = side==='user' ? 'ai' : 'user';
+  if(card.dmg>=50) state[side+'Chakra'] -= CHAKRA_COST; // 技能3消耗查克拉
+
+  // 应用已叠加的增益（暴击×1.5、吸血50%）
+  let dmg = card.dmg;
+  const critN=state[side+'Crit'], drainN=state[side+'Drain'];
+  state[side+'Crit']=0; state[side+'Drain']=0;
+  if(critN>0) dmg = Math.round(dmg * Math.pow(1.5, critN));
+
+  const who = side==='user' ? '🫵 你' : '🤖 系统';
+  addLog(who+'打出【'+card.skill+'】'+(critN>0?'（✨暴击！×'+critN+'）':'')+'，造成 '+dmg+' 点伤害！');
+  sfx(card.dmg>=50 ? 'ultimate' : (critN>0 ? 'crit' : (card.dmg>=25 ? 'skill2' : 'skill1')));
+  if(card.dmg>=50 || critN>0) shake();
+
+  // 目标：地狱难度下系统集火我方血量最低的忍者
+  let targetIdx;
+  if(side==='ai' && difficulty==='hell') targetIdx=lowestHpIndex('user');
+  const hitIdx = (targetIdx!==undefined) ? targetIdx : state[target+'Idx'];
+  attackBeam(side, state[side+'Idx'], target, hitIdx,
+    card.dmg>=50 ? '#ffd24d' : (critN>0 ? '#ff9d2f' : '#ff7847'));
+
+  if(!dealDamage(target, dmg, targetIdx)) return false;
+
+  // 吸血：回复造成伤害的 50%×叠加数
+  if(drainN>0){
+    healActive(side, Math.round(dmg*0.5*drainN));
   }
   return true;
 }
 
-// ===== 忍者倒下时，清除属于该忍者的所有技能牌 =====
-function discardNinjaCards(name){
-  let gone = 0;
-  const keep = (c)=>{ if(c.ninja===name){ gone++; return false; } return true; };
-  state.userHand = state.userHand.filter(keep);
-  state.aiHand   = state.aiHand.filter(keep);
-  if(state.dealtCard && state.dealtCard.ninja===name){ state.dealtCard=null; gone++; }
-  if(gone>0) addLog('💨 '+name+' 的技能牌全部消散（共 '+gone+' 张）');
-  // 保险：若恰好抽到的牌被清除（正常流程不会发生），补抽一张
-  if(!state.over && state.turn && !state.dealtCard) drawCard();
+// ===== 使用特效牌（不算出牌，立即生效） =====
+function playEffect(side, card){
+  if(state['sealed'+capS(side)]) return false;              // 被封印不能使用特效牌
+  const target = side==='user' ? 'ai' : 'user';
+  const who = side==='user' ? '🫵 你' : '🤖 系统';
+  const d=EFFECT_DEFS[card.effect];
+  switch(card.effect){
+    case 'crit':
+      state[side+'Crit']++;
+      addLog('✨ '+who+'使用【暴击牌】，下次技能伤害×'+(Math.pow(1.5,state[side+'Crit']).toFixed(2))+'！');
+      break;
+    case 'drain':
+      state[side+'Drain']++;
+      addLog('💚 '+who+'使用【吸血牌】，下次技能回复伤害的 50%'+(state[side+'Drain']>1?'×'+state[side+'Drain']:'')+'！');
+      break;
+    case 'combo':
+      state[side+'Combo']++;
+      addLog('⚡ '+who+'使用【连击牌】，本回合可再打出 1 张技能牌！');
+      break;
+    case 'burn': {
+      const b=state['burn'+capS(target)];
+      if(b){ b.dmg+=10; b.turns=2; }
+      else{ state['burn'+capS(target)]={dmg:10, turns:2}; }
+      addLog('🔥 '+who+'使用【灼烧牌】，'+getActive(target).ninja.name+' 接下来两回合每回合扣 10 血！');
+      break;
+    }
+    case 'seal':
+      state['sealed'+capS(target)] = true;
+      addLog('🖐️ '+who+'使用【封印牌】，'+getActive(target).ninja.name+' 下回合不能出牌（只能存牌）！');
+      break;
+  }
+  sfx(card.effect==='burn'?'burn':(card.effect==='seal'?'seal':'buff'));
+  return true;
 }
 
+// ===== 结算 =====
 function gameOver(loser){
-  const win = loser==='user'?'ai':'user';
+  const win = loser==='user' ? 'ai' : 'user';
+  const won = win==='user';
+  const stats = getStats();
+  const pts = DIFF_INFO[difficulty].pts;
+  stats.games++;
+  if(won){
+    stats.wins++;
+    stats.streak++;
+    if(stats.streak>stats.best) stats.best=stats.streak;
+    stats.score += pts;
+  }else{
+    stats.losses++;
+    stats.streak=0;
+  }
+  saveUsers();
+
   renderBattle();
-  document.getElementById('overlay-title').textContent = win==='user' ? '🎉 你赢了！' : '💀 你输了…';
-  document.getElementById('overlay-sub').textContent  = '点击下方按钮，开始下一局';
-  document.getElementById('overlay').style.display = 'flex';
+  const title=document.getElementById('overlay-title');
+  title.textContent = won ? '🎉 你赢了！' : '💀 你输了…';
+  title.style.color = won ? '#4ade80' : '#f87171';
+  document.getElementById('overlay-sub').textContent = won
+    ? '击败了「'+DIFF_INFO[difficulty].label+'」难度系统'
+    : '本局落败，再试一次！';
+  const ptsEl=document.getElementById('overlay-pts');
+  if(won){
+    ptsEl.innerHTML = '⭐ 积分 +'+pts+'　·　当前积分：'+stats.score+'　·　连胜：'+stats.streak;
+    ptsEl.style.color='#4ade80';
+  }else{
+    ptsEl.innerHTML = '积分：'+stats.score+' 分'+(stats.streak===0?'　·　连胜已中断':'');
+    ptsEl.style.color='#9db2d0';
+  }
+  const r=rankFor(stats.score);
+  const ci=RANKS.findIndex(x=>x.need===r.need);
+  const next=RANKS[ci+1];
+  document.getElementById('overlay-next-rank').textContent = next
+    ? '当前段位「'+r.name+'」，距「'+next.name+'」还需 '+(next.need-stats.score)+' 分'
+    : '已到达最高段位「'+r.name+'」！';
+  document.getElementById('overlay').style.display='flex';
+  sfx(won?'win':'lose');
 }
 
 // ===== 玩家操作 =====
-function userPlayDealt(){
-  if(!state || state.over || state.turn!=='user') return;
-  const card = state.dealtCard;
-  state.dealtCard = null;
-  addLog('🫵 你打出【'+card.skill+'】，造成 '+card.dmg+' 点伤害！');
-  if(!dealDamage('ai', card.dmg)) return;
-  state.turn='ai'; startTurn();
-}
-function userStore(){
-  if(!state || state.over || state.turn!=='user') return;
-  const card = state.dealtCard;
-  addLog('📥 你将【'+card.skill+'】存入手牌');
-  addToHand('user', card);
-  state.dealtCard = null;
-  state.turn='ai'; startTurn();
-}
-function userPlayStored(i){
-  if(!state || state.over || state.turn!=='user') return;
-  const card = state.userHand[i];
-  state.userHand.splice(i,1); // 先移除要打的牌，避免手牌变化导致索引错位
-  // 新抽的牌自动存入
-  if(state.dealtCard){
-    addLog('📥 新牌【'+state.dealtCard.skill+'】自动存入你的手牌');
-    addToHand('user', state.dealtCard);
-    state.dealtCard=null;
+function checkSkillLimit(side){
+  const allow = 1 + state[side+'Combo'];          // 默认1张，连击可再出
+  if(state[side+'SkillsPlayed'] >= allow){
+    alert('本回合只能打出 '+allow+' 张技能牌（使用连击牌可再出 1 张）！');
+    return false;
   }
-  addLog('🫵 你打出存牌【'+card.skill+'】，造成 '+card.dmg+' 点伤害！');
-  if(!dealDamage('ai', card.dmg)) return;
-  state.turn='ai'; startTurn();
+  return true;
 }
-function userDiscard(i){
-  if(!state || state.over || state.turn!=='user') return;
-  const card = state.userHand[i];
+function userPlayHand(i){
+  if(!state || state.over || state.turn!=='user' || !state.userPicked) return; // 选牌后才能出牌
+  const card=state.userHand[i];
+  if(!card) return;
+  if(card.type==='skill'){
+    if(!canPlaySkill('user',card)){
+      if(state.sealedUser) alert('被封印：本轮不能出牌，只能存牌！');
+      else alert('查克拉不足：技能3需要 '+CHAKRA_COST+' 点查克拉！');
+      return;
+    }
+    if(!checkSkillLimit('user')) return;
+    pushUndoSnap();                         // 出牌前保存状态快照，供撤销
+    playSkill('user',card);
+    state.userSkillsPlayed++;
+  }else{
+    if(!canPlayEffect('user',card)){
+      alert('被封印：本轮不能使用特效牌，只能存牌！');
+      return;
+    }
+    pushUndoSnap();                         // 出牌前保存状态快照，供撤销
+    playEffect('user',card);
+  }
   state.userHand.splice(i,1);
-  addLog('🗑️ 你舍弃了手牌【'+card.skill+'】('+card.dmg+' 伤)');
   renderBattle();
+}
+function userDiscardHand(i){
+  if(!state || state.over || state.turn!=='user') return;
+  const card=state.userHand[i];
+  if(!card) return;
+  state.userHand.splice(i,1);
+  addLog('🗑️ 你舍弃了手牌【'+cardLabel(card)+'】');
+  sfx('click');
+  renderBattle();
+}
+function userStoreAll(){
+  if(!state || state.over || state.turn!=='user' || state.userPicked) return;
+  const draw=state.dealtCards.slice();
+  if(draw.length===0){ addLog('📦 本轮没有可存的牌'); return; }
+  if(state.userHand.length + draw.length > HAND_MAX){
+    alert('手牌上限 '+HAND_MAX+' 张！当前手牌 '+state.userHand.length+' 张，再存 '+draw.length+' 张会超出，请先点手牌上的「✕」舍弃 '+(state.userHand.length+draw.length-HAND_MAX)+' 张');
+    return;
+  }
+  draw.forEach(c=>state.userHand.push(c));
+  state.dealtCards=[];
+  addLog('📦 你选择全部存牌：存入 '+draw.length+' 张，下轮随机 3 选 1');
+  sfx('click');
+  state.userStoredAll=true;
+  endTurn('ai');
+}
+function userPick(i){
+  if(!state || state.over || state.turn!=='user' || state.userPicked) return;
+  const card=state.dealtCards[i];
+  if(!card) return;
+  if(state.userHand.length>=HAND_MAX){
+    alert('手牌上限 '+HAND_MAX+' 张！请先点卡槽里的「✕」舍弃 1 张');
+    return;
+  }
+  state.userHand.push(card);                 // 选中的 1 张存入卡槽
+  state.dealtCards=[];                       // 其余牌作废
+  state.pickFrom=0;
+  state.userPicked=true;
+  addLog('🎯 你选择了【'+cardLabel(card)+'】存入卡槽，可开始出牌');
+  sfx('click');
+  renderBattle();
+}
+function userSkipPick(){
+  if(!state || state.over || state.turn!=='user' || state.userPicked) return;
+  const n=state.dealtCards.length;
+  state.dealtCards=[];                       // 放弃本回合抽到的牌
+  state.pickFrom=0;
+  state.userPicked=true;                     // 跳过选牌，直接进入出牌阶段
+  addLog('🙅 你跳过了选牌（放弃 '+n+' 张），直接出牌');
+  sfx('click');
+  renderBattle();
+}
+// 出牌前保存快照：撤销时恢复「出牌阶段」的完整状态
+function pushUndoSnap(){
+  const ai = getActive('ai');
+  state.undoStack.push({
+    hand:       state.userHand.slice(),      // 出牌前的手牌（含将要打出的那张）
+    chakra:     state.userChakra,
+    crit:       state.userCrit,
+    drain:      state.userDrain,
+    skillsPlayed: state.userSkillsPlayed,
+    combo:      state.userCombo,
+    burnAi:     state.burnAi ? {dmg:state.burnAi.dmg, turns:state.burnAi.turns} : null,
+    sealedAi:   state.sealedAi,
+    aiHp:       ai.hp, aiMax: ai.max, aiIdx: state.aiIdx,   // 对方当前忍者血量
+  });
+}
+// 撤销最近一次出牌：恢复该牌到手牌，回到「出牌阶段」（不撤销选牌）
+function userUndoPlay(){
+  if(!state || state.over || state.turn!=='user' || !state.userPicked) return;
+  const last = state.undoStack[state.undoStack.length-1];
+  if(!last){ alert('本回合还没有出过牌，没有可撤销的'); return; }
+  if(state.aiIdx !== last.aiIdx){
+    alert('刚才的出牌导致对方忍者倒下换人，无法撤销！');
+    return;
+  }
+  const snap = state.undoStack.pop();
+  state.userHand       = snap.hand;
+  state.userChakra     = snap.chakra;
+  state.userCrit       = snap.crit;
+  state.userDrain      = snap.drain;
+  state.userSkillsPlayed = snap.skillsPlayed;
+  state.userCombo      = snap.combo;
+  state.burnAi         = snap.burnAi;
+  state.sealedAi       = snap.sealedAi;
+  const ai=getActive('ai');
+  ai.hp = snap.aiHp; ai.max = snap.aiMax;
+  addLog('↩️ 撤销了上一张出牌，该牌已回到手牌（仍处于出牌阶段）');
+  sfx('click');
+  renderBattle();
+}
+function userReroll(){
+  if(!state || state.over || state.turn!=='user' || state.userPicked) return;
+  if(state.userChakra < 1){
+    alert('查克拉不足：重选一批需要消耗 1 点查克拉！');
+    return;
+  }
+  state.userChakra -= 1;
+  dealCards(state.pickFrom>0?3:2);          // 重新随机一批（2 张或 3 张）
+  addLog('🎲 你消耗 1 查克拉重选了一批牌（'+(state.pickFrom>0?3:2)+' 张）');
+  sfx('draw');
+  renderBattle();
+}
+function userEndTurn(){
+  if(!state || state.over || state.turn!=='user') return;
+  endTurn('ai');
 }
 
 // ===== 系统 AI =====
-function aiAct(){
-  if(!state || state.over || state.turn!=='ai') return;
-  const dealt = state.dealtCard;
-
-  // 随机决定：出牌 70% / 存牌 30%（出牌概率更大）
-  if(Math.random() < 0.7){
-    // 出牌：优先打出伤害最高的牌（先高后低）
-    let best = dealt, bestFrom = 'dealt';
-    for(let i=0;i<state.aiHand.length;i++){
-      if(state.aiHand[i].dmg > best.dmg){ best = state.aiHand[i]; bestFrom = i; }
-    }
-    if(bestFrom==='dealt'){
-      state.dealtCard = null;
-      addLog('🤖 系统打出【'+best.skill+'】，造成 '+best.dmg+' 点伤害！');
-    }else{
-      state.aiHand.splice(bestFrom,1); // 先移除要打的牌
-      if(dealt){
-        addLog('📥 新牌【'+dealt.skill+'】自动存入系统手牌');
-        addToHand('ai', dealt);
-      }
-      state.dealtCard = null;
-      addLog('🤖 系统打出存牌【'+best.skill+'】，造成 '+best.dmg+' 点伤害！');
-    }
-    if(!dealDamage('user', best.dmg)) return;
-  }else{
-    // 存牌
-    if(dealt){
-      addLog('📥 系统将【'+dealt.skill+'】存入手牌');
-      addToHand('ai', dealt);
-      state.dealtCard = null;
+function cardValue(card){
+  if(card.type==='effect'){
+    switch(card.effect){
+      case 'crit':  return 30;
+      case 'drain': return 18;
+      case 'combo': return 18;
+      case 'burn':  return 20;
+      case 'seal':  return 20;
     }
   }
-  state.turn='user'; startTurn();
+  return card.dmg;
+}
+function removeCard(card){
+  const di=state.dealtCards.indexOf(card);
+  if(di>=0){ state.dealtCards.splice(di,1); return; }
+  const hi=state.aiHand.indexOf(card);
+  if(hi>=0){ state.aiHand.splice(hi,1); }
+}
+function aiAct(){
+  if(!state || state.over || state.turn!=='ai') return;
+  const steps=[];
+  const sealed=state.sealedAi;               // 被封印：技能、特效都不能出，只能存牌
+  const info=DIFF_INFO[difficulty];
+  if(sealed){
+    steps.push({kind:'storeAll'});
+  }else{
+    // 选牌阶段：抽到的牌太差且查克拉充足时，系统也消耗 1 查克拉重选一批
+    if(state.dealtCards.length>0){
+      let bestVal=0;
+      for(const c of state.dealtCards) bestVal=Math.max(bestVal, cardValue(c));
+      if(state.aiChakra>=1 && bestVal<25 && state.aiHand.length<HAND_MAX && Math.random()<info.aiPlay){
+        state.aiChakra -= 1;
+        addLog('⚡ 系统消耗 1 查克拉重选了一批牌');
+        dealCards(state.pickFrom>0?3:2);
+      }
+    }
+    // 选牌阶段：从抽到的牌里选价值最高的 1 张存入卡槽（卡槽满则不选）
+    let pickedCard=null;
+    if(state.dealtCards.length>0 && state.aiHand.length<HAND_MAX){
+      let best=0;
+      for(let i=1;i<state.dealtCards.length;i++) if(cardValue(state.dealtCards[i])>cardValue(state.dealtCards[best])) best=i;
+      pickedCard=state.dealtCards[best];
+      steps.push({kind:'pick', card:pickedCard});
+    }
+    // 出牌阶段：打手牌里的特效 → 技能（含刚选中的这张）
+    const hand = pickedCard ? state.aiHand.concat([pickedCard]) : state.aiHand.slice();
+    hand.filter(c=>c.type==='effect').forEach(c=>steps.push({kind:'effect', card:c}));
+    const affordable = hand.filter(c=>c.type==='skill').filter(c=>canPlaySkill('ai', c));
+    affordable.sort((a,b)=>cardValue(b)-cardValue(a));
+    const comboCount = hand.filter(c=>c.type==='effect'&&c.effect==='combo').length;
+    if(affordable.length>0 && Math.random()<info.aiPlay){
+      affordable.slice(0, 1+comboCount).forEach(c=>steps.push({kind:'skill', card:c}));
+    }
+  }
+  state._aiSteps=steps;
+  state._aiStepIdx=0;
+  state.aiPlayingIdx=null;
+  setTimeout(aiActStep, AI_START_DELAY);
+}
+function aiActStep(){
+  if(!state || state.over) return;
+  const steps=state._aiSteps||[];
+  if(state._aiStepIdx >= steps.length){
+    // 全部行动完毕
+    state.dealtCards=[];
+    state.aiPlayingIdx=null;
+    state._aiSteps=null;
+    if(state.over) return;
+    endTurn('user');
+    return;
+  }
+  const step=steps[state._aiStepIdx++];
+  state.aiPlayingIdx = step.card || null;   // 高亮当前正在处理的牌
+  if(step.kind==='pick'){
+    if(state.aiHand.length>=HAND_MAX){
+      addLog('🗑️ 系统卡槽已满，舍弃【'+cardLabel(step.card)+'】');
+    }else{
+      state.aiHand.push(step.card);
+      addLog('🤖 系统选择【'+cardLabel(step.card)+'】存入卡槽');
+    }
+    state.dealtCards=[];
+    state.pickFrom=0;
+  }else if(step.kind==='effect'){
+    playEffect('ai', step.card);
+    removeCard(step.card);
+  }else if(step.kind==='skill'){
+    playSkill('ai', step.card);
+    state.aiSkillsPlayed++;
+    removeCard(step.card);
+  }else if(step.kind==='storeAll'){
+    const draw=state.dealtCards.slice();
+    draw.forEach(c=>{
+      if(state.aiHand.length>=HAND_MAX){ addLog('🗑️ 系统卡槽已满，舍弃【'+cardLabel(c)+'】'); }
+      else{ state.aiHand.push(c); addLog('📦 系统存入【'+cardLabel(c)+'】到卡槽'); }
+    });
+    state.dealtCards=[];
+    state.aiStoredAll=true;
+    addLog('🤖 系统选择全部存牌');
+  }
+  renderBattle();
+  if(state.over) return;
+  setTimeout(aiActStep, AI_STEP_DELAY);
+}
+
+// ===== 特效 =====
+function shake(){
+  const el=document.getElementById('screen-battle');
+  el.classList.remove('shake');
+  void el.offsetWidth;
+  el.classList.add('shake');
+}
+function floatText(x,y,text,color,size){
+  const el=document.createElement('div');
+  el.className='float-text';
+  el.textContent=text;
+  el.style.left=x+'px';
+  el.style.top=y+'px';
+  el.style.color=color||'#fff';
+  el.style.fontSize=size||'22px';
+  document.getElementById('fx').appendChild(el);
+  setTimeout(()=>el.remove(), 950);
+}
+function burst(x,y,color){
+  const el=document.createElement('div');
+  el.className='burst';
+  el.style.left=x+'px';
+  el.style.top=y+'px';
+  el.style.borderColor=color||'#ff9d2f';
+  document.getElementById('fx').appendChild(el);
+  setTimeout(()=>el.remove(), 700);
+}
+function ninjaRect(side, idx){
+  const el=document.getElementById('n-'+side+'-'+idx);
+  if(!el) return null;
+  const r=el.getBoundingClientRect();
+  return {x:r.left+r.width/2, y:r.top+r.height*0.32};
+}
+function attackBeam(fromSide, fromIdx, toSide, toIdx, color){
+  const a=ninjaRect(fromSide,fromIdx), b=ninjaRect(toSide,toIdx);
+  if(!a||!b) return;
+  const el=document.createElement('div');
+  el.className='beam';
+  const dx=b.x-a.x, dy=b.y-a.y;
+  el.style.width=Math.max(8, Math.sqrt(dx*dx+dy*dy))+'px';
+  el.style.left=a.x+'px';
+  el.style.top=a.y+'px';
+  el.style.transform='rotate('+(Math.atan2(dy,dx)*180/Math.PI)+'deg)';
+  el.style.background=color||'#ff9d2f';
+  document.getElementById('fx').appendChild(el);
+  setTimeout(()=>el.remove(), 300);
+}
+function fxDamage(side, idx, dmg){
+  const p=ninjaRect(side,idx);
+  if(p){
+    floatText(p.x,p.y,'-'+dmg,'#ff6b6b', dmg>=50?'34px':(dmg>=25?'28px':'24px'));
+    burst(p.x,p.y, dmg>=50?'#ffb84d':(dmg>=25?'#ff7847':'#ff5a5a'));
+    if(dmg>=50) burst(p.x,p.y,'#fff');
+  }
+  const el=document.getElementById('n-'+side+'-'+idx);
+  if(el){
+    el.classList.remove('flash');
+    void el.offsetWidth;
+    el.classList.add('flash');
+  }
+  if(dmg>=25) shake();
+  sfx('hit');
+}
+function fxHeal(side, idx, amt){
+  const p=ninjaRect(side,idx);
+  if(p) floatText(p.x,p.y,'+'+amt,'#4ade80','24px');
 }
 
 // ===== 渲染对战界面 =====
-function renderBattle(){
-  const s = state;
+function renderBattleHeader(){
+  const s=state;
+  const info=DIFF_INFO[difficulty];
+  const rank=rankFor(getStats().score);
   document.getElementById('battle-header').innerHTML =
     '<div class="hdr-item">🎴 第 '+gameCount+' 局</div>'
-    + '<div class="hdr-item">🎲 本局先手：'+(s.userStarts?'🫵 你':'🤖 系统')+'</div>'
-    + '<div class="hdr-item">⚡ 当前行动：'+(s.turn==='user'?'🫵 你':'🤖 系统')+'</div>'
-    + '<div class="hdr-item" style="color:#8fa2c4">（下一局先手会互换）</div>';
-
+    + '<div class="hdr-item">🎯 难度：'+info.label+'</div>'
+    + '<div class="hdr-item">🎲 先手：'+(s.userStarts?'🫵 你':'🤖 系统')+'</div>'
+    + '<div class="hdr-item">⚡ 行动：'+(s.turn==='user'?'🫵 你':'🤖 系统')+'</div>'
+    + '<div class="hdr-item" style="color:#8fa2c4">🏅 '+rank.name+' · '+getStats().score+'分</div>'
+    + '<div class="hdr-item"><button id="sound-toggle" onclick="toggleSound()">'+(soundOn?'🔊':'🔇')+'</button></div>';
+}
+function handCardHtml(card, interactive, play, idx, highlight){
+  const isSkill = card.type==='skill';
+  const label = '<div class="hand-label">'+(isSkill ? card.skill : '✨'+EFFECT_DEFS[card.effect].name)+'</div>'
+    + (isSkill ? '<div class="hand-dmg">'+card.dmg+'伤</div>' : '');
+  let btns='';
+  if(interactive){
+    if(play) btns += '<button class="mini-btn play" onclick="userPlayHand('+idx+')">'+(isSkill?'出牌':'使用')+'</button>';
+    btns += '<button class="mini-btn disc" onclick="userDiscardHand('+idx+')" title="舍弃">✕</button>';
+    btns = '<div class="hand-btns">'+btns+'</div>';
+  }
+  return '<div class="hand-card'+(isSkill?'':' eff')+(highlight?' ai-playing':'')+'">'+label+btns+'</div>';
+}
+function renderHands(){
+  const bar=document.getElementById('hand-bar');
+  if(!state){ bar.innerHTML=''; return; }
+  const myTurn = state.turn==='user' && !state.over;
+  const myPlay = myTurn && state.userPicked;          // 选牌完成后才能从手牌出牌
+  const ap = state.aiPlayingIdx;
+  const usr = state.userHand.map((c,i)=>handCardHtml(c, myTurn, myPlay, i, false)).join('') || '<span class="hand-empty">空</span>';
+  const ai  = state.aiHand.map((c,i)=>handCardHtml(c, false, false, i, c===ap)).join('') || '<span class="hand-empty">空</span>';
+  bar.innerHTML =
+    '<div class="hand-box hand-ai hand-size-'+state.aiHand.length+'"><div class="hand-title ai">🤖 系统手牌　'+state.aiHand.length+'/'+HAND_MAX+'</div><div class="hand-row">'+ai+'</div></div>'
+    + '<div class="hand-box hand-user hand-size-'+state.userHand.length+'"><div class="hand-title user">🫵 你的手牌　'+state.userHand.length+'/'+HAND_MAX+'</div><div class="hand-row">'+usr+'</div></div>';
+}
+function renderBattle(){
+  const s=state;
+  renderBattleHeader();
+  // 应用随机决斗场背景
+  if(s.bg){
+    document.getElementById('screen-battle').style.backgroundImage="url('"+s.bg+"')";
+  }
   document.getElementById('user-row').innerHTML = renderTeam('user');
   document.getElementById('ai-row').innerHTML   = renderTeam('ai');
 
-  // 技能牌区
-  const cz = document.getElementById('card-zone');
+  const cz=document.getElementById('card-zone');
   if(s.over){
-    cz.innerHTML = '';
-  }else if(!s.dealtCard){
-    cz.innerHTML = '<div class="card-title">等待抽牌…</div>';
-  }else if(s.turn==='user'){
-    cz.innerHTML =
-      '<div class="card-title">本回合抽到的技能牌：</div>'
-      + '<div class="skill-card">【'+s.dealtCard.skill+'】 造成 <b>'+s.dealtCard.dmg+'</b> 点伤害</div>'
+    cz.innerHTML='';
+  }else if(s.turn==='user' && !s.userPicked){
+    const isThree = s.pickFrom>0;
+    cz.innerHTML='<div class="card-title">'
+      + (isThree
+          ? '📦 上轮全部存牌 · 本轮随机出现 3 张，请选 1 张存入卡槽（或全部存牌 / 跳过 / 重选）：'
+          : '🎴 本回合随机出现 '+s.dealtCards.length+' 张牌，请选 1 张存入卡槽（或全部存牌 / 跳过 / 重选）：')
+      + '</div>'
+      + '<div class="chakra-hint">⚡ 当前查克拉：'+s.userChakra+' / '+CHAKRA_MAX+'　·　「重选一批」需消耗 1 点查克拉</div>'
+      + '<div class="cards-row">'
+      + s.dealtCards.map((c,i)=>'<div>'+cardHtml(c)
+          + '<div class="actions"><button class="act-btn play" onclick="userPick('+i+')">选择存入</button></div></div>').join('')
+      + '</div>'
+      + (s.sealedUser?'<div class="seal-warn">🖐️ 被封印：本轮不能出技能/特效牌，只能选牌、存牌、跳过或重选</div>':'')
       + '<div class="actions">'
-      +   '<button class="act-btn play"  onclick="userPlayDealt()">出牌</button>'
-      +   '<button class="act-btn store" onclick="userStore()">存牌</button>'
+      +   '<button class="act-btn store" onclick="userStoreAll()">📦 全部存牌（下轮 3 选 1）</button>'
+      +   '<button class="act-btn skip" onclick="userSkipPick()">⏭️ 跳过选择</button>'
+      +   '<button class="act-btn reroll" onclick="userReroll()">🎲 重选一批（耗 1 查克拉）</button>'
+      + '</div>';
+  }else if(s.turn==='user'){
+    cz.innerHTML='<div class="card-title">🎴 已进入出牌阶段，请从下方手牌堆中出牌：</div>'
+      + (s.sealedUser?'<div class="seal-warn">🖐️ 被封印：本轮不能出牌（技能、特效都不行），只能存牌</div>':'')
+      + '<div class="skill-limit">⚔️ 技能本回合已出 '+s.userSkillsPlayed+' / '+(1+s.userCombo)+' 张（连击牌可再出 1 张）</div>'
+      + '<div class="actions">'
+      +   '<button class="act-btn play" onclick="userEndTurn()">✅ 结束本回合</button>'
+      +   '<button class="act-btn undo" onclick="userUndoPlay()">↩️ 撤销出牌</button>'
       + '</div>';
   }else{
-    cz.innerHTML =
-      '<div class="card-title">系统本回合抽到的技能牌：</div>'
-      + '<div class="skill-card">【'+s.dealtCard.skill+'】 造成 <b>'+s.dealtCard.dmg+'</b> 点伤害</div>'
+    cz.innerHTML='<div class="card-title">🤖 系统抽到 '+s.dealtCards.length+' 张牌（选 1 张存入卡槽）：</div>'
+      + '<div class="cards-row">'+s.dealtCards.map((c,i)=>'<div class="'+(s.aiPlayingIdx===c?'ai-playing':'')+'">'+cardHtml(c)+'</div>').join('')+'</div>'
+      + (s.sealedAi?'<div class="seal-warn">🖐️ 系统被封印：本轮不能出牌，只能全部存牌</div>':'')
       + '<div class="actions"><span class="waiting">🤖 系统正在行动…</span></div>';
   }
+  renderHands();
 
-  // 手牌区
-  const hz = document.getElementById('hand-zone');
-  if(s.userHand.length===0){
-    hz.innerHTML = '<div class="hand-title">你的手牌：<span style="opacity:.5">暂无</span></div>';
-  }else{
-    let html = '<div class="hand-title">你的手牌：</div><div class="hand-cards">';
-    s.userHand.forEach((c,i)=>{
-      const dis = (s.turn!=='user' || s.over) ? 'disabled' : '';
-      html += '<div class="stored-card">【'+c.skill+'】'+c.dmg+' 伤 '
-        + '<button class="mini-btn" '+dis+' onclick="userPlayStored('+i+')">使用</button>'
-        + '<button class="mini-btn disc" '+dis+' onclick="userDiscard('+i+')">舍弃</button></div>';
-    });
-    html += '</div>';
-    hz.innerHTML = html;
-  }
-
-  // 战斗记录
-  const lg = document.getElementById('log');
+  const lg=document.getElementById('log');
   lg.innerHTML = s.log.slice(-40).join('<br>');
   lg.scrollTop = lg.scrollHeight;
 }
@@ -482,20 +1298,44 @@ function renderTeam(side){
   return t.map((m,i)=>{
     const dead = m.hp<=0;
     const isActive = (i===idx && !dead && !state.over);
-    let cls = 'ninja-card';
+    let cls='ninja-card';
     if(dead) cls+=' dead';
     if(isActive) cls+=' active';
-    const hpPct = Math.max(0, m.hp);
-    return '<div class="'+cls+'">'
-      + '<div class="hp-text">血量：'+m.hp+' / 100</div>'
+    const hpPct=Math.max(0, Math.round(m.hp/m.max*100));
+    let chakraHtml='';
+    let buffs='';
+    if(isActive){
+      chakraHtml='<div class="chakra-line">⚡ 查克拉：'+state[side+'Chakra']+' / '+CHAKRA_MAX+'</div>';
+      const parts=[];
+      if(state[side+'Crit']>0)  parts.push('✨暴击×'+state[side+'Crit']+'（×1.5）');
+      if(state[side+'Drain']>0) parts.push('💚吸血×'+state[side+'Drain']+'（50%）');
+      const sealed = side==='user' ? state.sealedUser : state.sealedAi;
+      const burn = side==='user' ? state.burnUser : state.burnAi;
+      if(sealed) parts.push('🖐️封印');
+      if(burn) parts.push('🔥灼烧'+burn.dmg+'×'+burn.turns+'回合');
+      if(parts.length) buffs='<div class="buffs">'+parts.join('　')+'</div>';
+    }
+    return '<div class="'+cls+'" id="n-'+side+'-'+i+'">'
+      + '<div class="hp-text">血量：'+m.hp+' / '+m.max+'</div>'
       + '<div class="hp-bar"><div class="hp-fill" style="width:'+hpPct+'%"></div></div>'
       + '<img class="ninja-img" src="'+m.ninja.img+'" alt="'+m.ninja.name+'" onerror="this.style.display=\'none\'">'
       + '<div class="ninja-name">'+m.ninja.name+'</div>'
-      + '<div class="ninja-skills">'+m.ninja.skills.map((sk,i)=>sk+'（'+DMG[i]+'）').join(' · ')+'</div>'
+      + '<div class="ninja-skills">'+m.ninja.skills.map((sk,i)=>sk+'（'+DMG[i]+(i===2?'·2查':'')+'）').join(' · ')+'</div>'
+      + chakraHtml + buffs
       + '<div class="status">'+(dead?'💀 倒下':(isActive?'⚔️ 出击中':'⏳ 待命'))+'</div>'
       + '</div>';
   }).join('');
 }
+
+// ===== 启动（自动登录） =====
+window.addEventListener('load', ()=>{
+  try{
+    const lu=localStorage.getItem(LOGIN_KEY);
+    if(lu && users[lu]) currentUser=lu;
+  }catch(e){}
+  if(currentUser) openStart();
+  else showScreen('login');
+});
 </script>
 </body>
 </html>
